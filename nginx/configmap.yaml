@@ -1,0 +1,40 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-configmap
+data:
+  default.conf: |
+    server {
+        listen       8080;
+        server_name  localhost;
+
+        location / {
+            root   /usr/share/nginx/html;
+            index  index.html index.htm;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   /usr/share/nginx/html;
+        }
+    }
+  index.html: |
+    <!DOCTYPE html>
+    <html lang="no">
+    <head>
+      <meta charset="UTF-8">
+      <title>Velkommen til demo-app!</title>
+      <style>
+          body {
+              width: 35em;
+              margin: 0 auto;
+              font-family: "Comic Sans MS", "Comic Sans", cursive;
+              background-color: yellow;
+          }
+      </style>
+    </head>
+    <body>
+      <h1>Velkommen til PEP nginx demo-app!</h1>
+    </body>
+    </html>
