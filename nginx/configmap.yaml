@@ -30,7 +30,7 @@ data:
               width: 35em;
               margin: 0 auto;
               font-family: "Comic Sans MS", "Comic Sans", cursive;
-              background-color: yellow;
+              background-color: azure;
           }
       </style>
     </head>
